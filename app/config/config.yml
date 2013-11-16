@@ -68,4 +68,10 @@ swiftmailer:
 fos_user:
     db_driver: orm # other valid values are 'mongodb', 'couchdb' and 'propel'
     firewall_name: main
-    user_class: BConway\UserBundle\Entity\User
+    user_class: \BConway\UserBundle\Entity\User
+    registration:
+        confirmation:
+            enabled: false
+    from_email:
+        address:        %fos_user_mailer_fromaddress%
+        sender_name:    %fos_user_mailer_sendername%
