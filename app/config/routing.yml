@@ -1,3 +1,7 @@
+b_conway_website:
+    resource: "@BConwayWebsiteBundle/Resources/config/routing.yml"
+    prefix:   /
+
 b_conway_user:
     resource: "@BConwayUserBundle/Resources/config/routing.yml"
     prefix:   /
