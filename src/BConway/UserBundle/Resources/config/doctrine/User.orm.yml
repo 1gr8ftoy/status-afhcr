@@ -1,5 +1,5 @@
 # src/Acme/BConway/Resources/config/doctrine/User.orm.yml
-Acme\BConway\Entity\User:
+BConway\UserBundle\Entity\User:
     type:  entity
     table: users
     id:

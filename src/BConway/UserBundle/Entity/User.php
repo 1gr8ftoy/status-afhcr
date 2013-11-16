@@ -1,7 +1,7 @@
 <?php
 // src/BConway/UserBundle/Entity/User.php
 
-namespace Acme\UserBundle\Entity;
+namespace BConway\UserBundle\Entity;
 
 use FOS\UserBundle\Model\User as BaseUser;
 

@@ -1,0 +1,7 @@
+parameters:
+#    b_conway_user.example.class: BConway\UserBundle\Example
+
+services:
+#    b_conway_user.example:
+#        class: %b_conway_user.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]
