@@ -1,0 +1,30 @@
+status:
+    pattern:  /
+    defaults: { _controller: "BConwayWebsiteBundle:StatusEntry:index" }
+
+status_show:
+    pattern:  /{id}
+    defaults: { _controller: "BConwayWebsiteBundle:StatusEntry:show" }
+
+status_new:
+    pattern:  /new
+    defaults: { _controller: "BConwayWebsiteBundle:StatusEntry:new" }
+
+status_create:
+    pattern:  /create
+    defaults: { _controller: "BConwayWebsiteBundle:StatusEntry:create" }
+    requirements: { _method: post }
+
+status_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "BConwayWebsiteBundle:StatusEntry:edit" }
+
+status_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "BConwayWebsiteBundle:StatusEntry:update" }
+    requirements: { _method: post|put }
+
+status_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "BConwayWebsiteBundle:StatusEntry:delete" }
+    requirements: { _method: post|delete }

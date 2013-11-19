@@ -1,0 +1,144 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>Job</h1>
+
+    <table class="record_properties">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ entity.id }}</td>
+            </tr>
+            <tr>
+                <th>Customerfirstname</th>
+                <td>{{ entity.customerFirstName }}</td>
+            </tr>
+            <tr>
+                <th>Customerlastname</th>
+                <td>{{ entity.customerLastName }}</td>
+            </tr>
+            <tr>
+                <th>Customercompany</th>
+                <td>{{ entity.customerCompany }}</td>
+            </tr>
+            <tr>
+                <th>Alternatepickupfirstname</th>
+                <td>{{ entity.alternatePickupFirstName }}</td>
+            </tr>
+            <tr>
+                <th>Alternatepickuplastname</th>
+                <td>{{ entity.alternatePickupLastName }}</td>
+            </tr>
+            <tr>
+                <th>Customerphonenumber1</th>
+                <td>{{ entity.customerPhoneNumber1 }}</td>
+            </tr>
+            <tr>
+                <th>Customerphonenumber2</th>
+                <td>{{ entity.customerPhoneNumber2 }}</td>
+            </tr>
+            <tr>
+                <th>Customeremailaddress</th>
+                <td>{{ entity.customerEmailAddress }}</td>
+            </tr>
+            <tr>
+                <th>Computerformfactor</th>
+                <td>{{ entity.computerFormFactor }}</td>
+            </tr>
+            <tr>
+                <th>Computermanufacturer</th>
+                <td>{{ entity.computerManufacturer }}</td>
+            </tr>
+            <tr>
+                <th>Computermodel</th>
+                <td>{{ entity.computerModel }}</td>
+            </tr>
+            <tr>
+                <th>Computerserialnumber</th>
+                <td>{{ entity.computerSerialNumber }}</td>
+            </tr>
+            <tr>
+                <th>Computerproductnumber</th>
+                <td>{{ entity.computerProductNumber }}</td>
+            </tr>
+            <tr>
+                <th>Computerpasswords</th>
+                <td>{{ entity.computerPasswords }}</td>
+            </tr>
+            <tr>
+                <th>Jobnotes</th>
+                <td>{{ entity.jobNotes }}</td>
+            </tr>
+            <tr>
+                <th>Rushorder</th>
+                <td>{{ entity.rushOrder }}</td>
+            </tr>
+            <tr>
+                <th>Jobquotedprice</th>
+                <td>{{ entity.jobQuotedPrice }}</td>
+            </tr>
+            <tr>
+                <th>Jobprivatenotes</th>
+                <td>{{ entity.jobPrivateNotes }}</td>
+            </tr>
+            <tr>
+                <th>Jobpromisedate</th>
+                <td>{{ entity.jobPromiseDate|date('Y-m-d H:i:s') }}</td>
+            </tr>
+            <tr>
+                <th>Jobcreatedby</th>
+                <td>{{ entity.jobCreatedBy }}</td>
+            </tr>
+            <tr>
+                <th>Computerspecdustingneeded</th>
+                <td>{{ entity.computerSpecDustingNeeded }}</td>
+            </tr>
+            <tr>
+                <th>Computerspecram</th>
+                <td>{{ entity.computerSpecRAM }}</td>
+            </tr>
+            <tr>
+                <th>Computerspecavtype</th>
+                <td>{{ entity.computerSpecAVType }}</td>
+            </tr>
+            <tr>
+                <th>Computerspecavexpired</th>
+                <td>{{ entity.computerSpecAVExpired }}</td>
+            </tr>
+            <tr>
+                <th>Computerspecharddrive</th>
+                <td>{{ entity.computerSpecHardDrive }}</td>
+            </tr>
+            <tr>
+                <th>Jobassignedtech</th>
+                <td>{{ entity.jobAssignedTech }}</td>
+            </tr>
+            <tr>
+                <th>Joboriginallocation</th>
+                <td>{{ entity.jobOriginalLocation }}</td>
+            </tr>
+            <tr>
+                <th>Jobcreatedat</th>
+                <td>{{ entity.jobCreatedAt|date('Y-m-d H:i:s') }}</td>
+            </tr>
+            <tr>
+                <th>Jobupdatedat</th>
+                <td>{{ entity.jobUpdatedAt|date('Y-m-d H:i:s') }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('') }}">
+            Back to the list
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('_edit', { 'id': entity.id }) }}">
+            Edit
+        </a>
+    </li>
+    <li>{{ form(delete_form) }}</li>
+</ul>
+{% endblock %}

@@ -1,3 +1,15 @@
 b_conway_website_homepage:
     pattern:  /hello/{name}
     defaults: { _controller: BConwayWebsiteBundle:Default:index }
+
+BConwayWebsiteBundle_job:
+    resource: "@BConwayWebsiteBundle/Resources/config/routing/job.yml"
+    prefix:   /job
+
+BConwayWebsiteBundle_status:
+    resource: "@BConwayWebsiteBundle/Resources/config/routing/statusentry.yml"
+    prefix:   /status
+
+BConwayWebsiteBundle_private-note:
+    resource: "@BConwayWebsiteBundle/Resources/config/routing/privatenote.yml"
+    prefix:   /private-note

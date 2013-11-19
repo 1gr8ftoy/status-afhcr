@@ -1,0 +1,30 @@
+job_index:
+    pattern:  /
+    defaults: { _controller: "BConwayWebsiteBundle:Job:index" }
+
+job_show:
+    pattern:  /{id}
+    defaults: { _controller: "BConwayWebsiteBundle:Job:show" }
+
+job_new:
+    pattern:  /new
+    defaults: { _controller: "BConwayWebsiteBundle:Job:new" }
+
+job_create:
+    pattern:  /create
+    defaults: { _controller: "BConwayWebsiteBundle:Job:create" }
+    requirements: { _method: post }
+
+job_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "BConwayWebsiteBundle:Job:edit" }
+
+job_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "BConwayWebsiteBundle:Job:update" }
+    requirements: { _method: post|put }
+
+job_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "BConwayWebsiteBundle:Job:delete" }
+    requirements: { _method: post|delete }

@@ -1,0 +1,47 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>PrivateNote list</h1>
+
+    <table class="records_list">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Jobid</th>
+                <th>Notetext</th>
+                <th>Notetime</th>
+                <th>Createdby</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td><a href="{{ path('private-note_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                <td>{{ entity.jobId }}</td>
+                <td>{{ entity.noteText }}</td>
+                <td>{% if entity.noteTime %}{{ entity.noteTime|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{{ entity.createdBy }}</td>
+                <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('private-note_show', { 'id': entity.id }) }}">show</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('private-note_edit', { 'id': entity.id }) }}">edit</a>
+                    </li>
+                </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+        <ul>
+        <li>
+            <a href="{{ path('private-note_new') }}">
+                Create a new entry
+            </a>
+        </li>
+    </ul>
+    {% endblock %}

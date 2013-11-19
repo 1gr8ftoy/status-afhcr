@@ -1,0 +1,48 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>StatusEntry</h1>
+
+    <table class="record_properties">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ entity.id }}</td>
+            </tr>
+            <tr>
+                <th>Jobid</th>
+                <td>{{ entity.jobId }}</td>
+            </tr>
+            <tr>
+                <th>Entrytime</th>
+                <td>{{ entity.entryTime|date('Y-m-d H:i:s') }}</td>
+            </tr>
+            <tr>
+                <th>Entrytype</th>
+                <td>{{ entity.entryType }}</td>
+            </tr>
+            <tr>
+                <th>Entrynotes</th>
+                <td>{{ entity.entryNotes }}</td>
+            </tr>
+            <tr>
+                <th>Createdby</th>
+                <td>{{ entity.createdBy }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('status') }}">
+            Back to the list
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('status_edit', { 'id': entity.id }) }}">
+            Edit
+        </a>
+    </li>
+    <li>{{ form(delete_form) }}</li>
+</ul>
+{% endblock %}

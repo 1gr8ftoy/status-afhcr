@@ -1,0 +1,30 @@
+private-note:
+    pattern:  /
+    defaults: { _controller: "BConwayWebsiteBundle:PrivateNote:index" }
+
+private-note_show:
+    pattern:  /{id}
+    defaults: { _controller: "BConwayWebsiteBundle:PrivateNote:show" }
+
+private-note_new:
+    pattern:  /new
+    defaults: { _controller: "BConwayWebsiteBundle:PrivateNote:new" }
+
+private-note_create:
+    pattern:  /create
+    defaults: { _controller: "BConwayWebsiteBundle:PrivateNote:create" }
+    requirements: { _method: post }
+
+private-note_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "BConwayWebsiteBundle:PrivateNote:edit" }
+
+private-note_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "BConwayWebsiteBundle:PrivateNote:update" }
+    requirements: { _method: post|put }
+
+private-note_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "BConwayWebsiteBundle:PrivateNote:delete" }
+    requirements: { _method: post|delete }

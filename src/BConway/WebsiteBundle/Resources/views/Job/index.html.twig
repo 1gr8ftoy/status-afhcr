@@ -1,0 +1,97 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>Job list</h1>
+
+    <table class="records_list">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Customerfirstname</th>
+                <th>Customerlastname</th>
+                <th>Customercompany</th>
+                <th>Alternatepickupfirstname</th>
+                <th>Alternatepickuplastname</th>
+                <th>Customerphonenumber1</th>
+                <th>Customerphonenumber2</th>
+                <th>Customeremailaddress</th>
+                <th>Computerformfactor</th>
+                <th>Computermanufacturer</th>
+                <th>Computermodel</th>
+                <th>Computerserialnumber</th>
+                <th>Computerproductnumber</th>
+                <th>Computerpasswords</th>
+                <th>Jobnotes</th>
+                <th>Rushorder</th>
+                <th>Jobquotedprice</th>
+                <th>Jobprivatenotes</th>
+                <th>Jobpromisedate</th>
+                <th>Jobcreatedby</th>
+                <th>Computerspecdustingneeded</th>
+                <th>Computerspecram</th>
+                <th>Computerspecavtype</th>
+                <th>Computerspecavexpired</th>
+                <th>Computerspecharddrive</th>
+                <th>Jobassignedtech</th>
+                <th>Joboriginallocation</th>
+                <th>Jobcreatedat</th>
+                <th>Jobupdatedat</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td><a href="{{ path('_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                <td>{{ entity.customerFirstName }}</td>
+                <td>{{ entity.customerLastName }}</td>
+                <td>{{ entity.customerCompany }}</td>
+                <td>{{ entity.alternatePickupFirstName }}</td>
+                <td>{{ entity.alternatePickupLastName }}</td>
+                <td>{{ entity.customerPhoneNumber1 }}</td>
+                <td>{{ entity.customerPhoneNumber2 }}</td>
+                <td>{{ entity.customerEmailAddress }}</td>
+                <td>{{ entity.computerFormFactor }}</td>
+                <td>{{ entity.computerManufacturer }}</td>
+                <td>{{ entity.computerModel }}</td>
+                <td>{{ entity.computerSerialNumber }}</td>
+                <td>{{ entity.computerProductNumber }}</td>
+                <td>{{ entity.computerPasswords }}</td>
+                <td>{{ entity.jobNotes }}</td>
+                <td>{{ entity.rushOrder }}</td>
+                <td>{{ entity.jobQuotedPrice }}</td>
+                <td>{{ entity.jobPrivateNotes }}</td>
+                <td>{% if entity.jobPromiseDate %}{{ entity.jobPromiseDate|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{{ entity.jobCreatedBy }}</td>
+                <td>{{ entity.computerSpecDustingNeeded }}</td>
+                <td>{{ entity.computerSpecRAM }}</td>
+                <td>{{ entity.computerSpecAVType }}</td>
+                <td>{{ entity.computerSpecAVExpired }}</td>
+                <td>{{ entity.computerSpecHardDrive }}</td>
+                <td>{{ entity.jobAssignedTech }}</td>
+                <td>{{ entity.jobOriginalLocation }}</td>
+                <td>{% if entity.jobCreatedAt %}{{ entity.jobCreatedAt|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{% if entity.jobUpdatedAt %}{{ entity.jobUpdatedAt|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('_show', { 'id': entity.id }) }}">show</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('_edit', { 'id': entity.id }) }}">edit</a>
+                    </li>
+                </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+        <ul>
+        <li>
+            <a href="{{ path('_new') }}">
+                Create a new entry
+            </a>
+        </li>
+    </ul>
+    {% endblock %}

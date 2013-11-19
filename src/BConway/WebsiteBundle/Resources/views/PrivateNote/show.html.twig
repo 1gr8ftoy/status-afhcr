@@ -1,0 +1,44 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>PrivateNote</h1>
+
+    <table class="record_properties">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ entity.id }}</td>
+            </tr>
+            <tr>
+                <th>Jobid</th>
+                <td>{{ entity.jobId }}</td>
+            </tr>
+            <tr>
+                <th>Notetext</th>
+                <td>{{ entity.noteText }}</td>
+            </tr>
+            <tr>
+                <th>Notetime</th>
+                <td>{{ entity.noteTime|date('Y-m-d H:i:s') }}</td>
+            </tr>
+            <tr>
+                <th>Createdby</th>
+                <td>{{ entity.createdBy }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('private-note') }}">
+            Back to the list
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('private-note_edit', { 'id': entity.id }) }}">
+            Edit
+        </a>
+    </li>
+    <li>{{ form(delete_form) }}</li>
+</ul>
+{% endblock %}
