@@ -1,0 +1,25 @@
+BConway\WebsiteBundle\Entity\PrivateNote:
+    type: entity
+    table: null
+    fields:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+        jobId:
+            type: integer
+        noteText:
+            type: text
+        noteTime:
+            type: datetime
+        createdBy:
+            type: integer
+    manyToOne:
+        job:
+            targetEntity: \BConway\WebsiteBundle\Entity\Job
+            inversedBy: private_notes
+            joinColumn:
+                name: job_id
+                referencedColumnName: id
+    lifecycleCallbacks: {  }

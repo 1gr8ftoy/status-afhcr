@@ -1,0 +1,27 @@
+BConway\WebsiteBundle\Entity\StatusEntry:
+    type: entity
+    table: null
+    fields:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+        jobId:
+            type: integer
+        entryTime:
+            type: datetime
+        entryType:
+            type: integer
+        entryNotes:
+            type: text
+        createdBy:
+            type: integer
+    manyToOne:
+        job:
+            targetEntity: \BConway\WebsiteBundle\Entity\Job
+            inversedBy: status_entries
+            joinColumn:
+                name: job_id
+                referencedColumnName: id
+    lifecycleCallbacks: {  }

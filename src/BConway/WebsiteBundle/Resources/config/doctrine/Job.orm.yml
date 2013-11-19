@@ -1,0 +1,97 @@
+BConway\WebsiteBundle\Entity\Job:
+    type: entity
+    table: null
+    repositoryClass: BConway\WebsiteBundle\Entity\JobRepository
+    fields:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+        customerFirstName:
+            type: string
+            length: 255
+        customerLastName:
+            type: string
+            length: 255
+        customerCompany:
+            type: string
+            length: 255
+        alternatePickupFirstName:
+            type: string
+            length: 255
+        alternatePickupLastName:
+            type: string
+            length: 255
+        customerPhoneNumber1:
+            type: string
+            length: 255
+        customerPhoneNumber2:
+            type: string
+            length: 255
+        customerEmailAddress:
+            type: string
+            length: 255
+        computerFormFactor:
+            type: string
+            length: 255
+        computerManufacturer:
+            type: string
+            length: 255
+        computerModel:
+            type: string
+            length: 255
+        computerSerialNumber:
+            type: string
+            length: 255
+        computerProductNumber:
+            type: string
+            length: 255
+        computerPasswords:
+            type: string
+            length: 255
+        jobNotes:
+            type: text
+        rushOrder:
+            type: boolean
+        jobQuotedPrice:
+            type: decimal
+        jobPrivateNotes:
+            type: text
+            column: job_private_notes
+        jobPromiseDate:
+            type: date
+        jobCreatedBy:
+            type: integer
+        computerSpecDustingNeeded:
+            type: boolean
+        computerSpecRAM:
+            type: string
+            length: 255
+        computerSpecAVType:
+            type: string
+            length: 255
+        computerSpecAVExpired:
+            type: boolean
+        computerSpecHardDrive:
+            type: string
+            length: 255
+        jobAssignedTech:
+            type: integer
+        jobOriginalLocation:
+            type: string
+            length: 255
+    oneToMany:
+        status_entries:
+            targetEntity: \BConway\WebsiteBundle\Entity\StatusEntry
+            mappedBy: job
+            orderBy:
+                entryTime: ASC
+            cascade: [all]
+        private_notes:
+            targetEntity: \BConway\WebsiteBundle\Entity\PrivateNote
+            mappedBy: job
+            orderBy:
+                noteTime: ASC
+            cascade: [all]
+    lifecycleCallbacks: {  }
