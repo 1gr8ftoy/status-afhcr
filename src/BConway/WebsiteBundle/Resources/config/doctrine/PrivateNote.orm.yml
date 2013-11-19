@@ -1,20 +1,22 @@
 BConway\WebsiteBundle\Entity\PrivateNote:
     type: entity
-    table: null
+    table: private_notes
     fields:
         id:
             type: integer
             id: true
             generator:
                 strategy: AUTO
-        jobId:
-            type: integer
         noteText:
             type: text
+            column: note_text
         noteTime:
             type: datetime
+            nullable: true
+            column: note_time
         createdBy:
             type: integer
+            column: created_by
     manyToOne:
         job:
             targetEntity: \BConway\WebsiteBundle\Entity\Job

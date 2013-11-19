@@ -1,6 +1,6 @@
 BConway\WebsiteBundle\Entity\Job:
     type: entity
-    table: null
+    table: jobs
     repositoryClass: BConway\WebsiteBundle\Entity\JobRepository
     fields:
         id:
@@ -11,80 +11,126 @@ BConway\WebsiteBundle\Entity\Job:
         customerFirstName:
             type: string
             length: 255
+            column: customer_first_name
         customerLastName:
             type: string
             length: 255
+            column: customer_last_name
         customerCompany:
             type: string
             length: 255
+            nullable: true
+            column: customer_company
         alternatePickupFirstName:
             type: string
             length: 255
+            nullable: true
+            column: alternate_pickup_first_name
         alternatePickupLastName:
             type: string
             length: 255
+            nullable: true
+            column: alternate_pickup_last_name
         customerPhoneNumber1:
             type: string
             length: 255
+            column: customer_phone_number1
         customerPhoneNumber2:
             type: string
             length: 255
+            nullable: true
+            column: customer_phone_number2
         customerEmailAddress:
             type: string
             length: 255
+            nullable: true
+            column: customer_email_address
         computerFormFactor:
             type: string
             length: 255
+            nullable: true
+            column: computer_form_factor
         computerManufacturer:
             type: string
             length: 255
+            nullable: true
+            column: computer_manufacturer
         computerModel:
             type: string
             length: 255
+            nullable: true
+            column: computer_model
         computerSerialNumber:
             type: string
             length: 255
+            nullable: true
+            column: computer_serial_number
         computerProductNumber:
             type: string
             length: 255
+            nullable: true
+            column: computer_product_number
         computerPasswords:
             type: string
             length: 255
+            nullable: true
+            column: computer_passwords
         jobNotes:
             type: text
+            nullable: true
+            column: job_notes
         rushOrder:
             type: boolean
+            column: rush_order
         jobQuotedPrice:
             type: decimal
-        jobPrivateNotes:
-            type: text
-            column: job_private_notes
+            column: job_quoted_price
         jobPromiseDate:
             type: date
+            column: job_promise_date
         jobCreatedBy:
             type: integer
+            column: job_created_by
         computerSpecDustingNeeded:
             type: boolean
+            nullable: true
+            column: computer_spec_dusting_needed
         computerSpecRAM:
             type: string
             length: 255
+            nullable: true
+            column: computer_spec_ram
         computerSpecAVType:
             type: string
             length: 255
+            nullable: true
+            column: computer_spec_av_type
         computerSpecAVExpired:
             type: boolean
+            nullable: true
+            column: computer_spec_av_expired
         computerSpecHardDrive:
             type: string
             length: 255
+            nullable: true
+            column: computer_spec_hard_drive
         jobAssignedTech:
-            type: integer
+            type: string
+            length: 255
+            nullable: true
+            column: job_assigned_tech
         jobOriginalLocation:
             type: string
             length: 255
+            column: job_original_location
         jobCreatedAt:
             type: datetime
+            nullable: true
+            column: job_created_at
         jobUpdatedAt:
             type: datetime
+            nullable: true
+            column: job_updated_at
     oneToMany:
         status_entries:
             targetEntity: \BConway\WebsiteBundle\Entity\StatusEntry

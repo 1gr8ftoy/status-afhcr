@@ -1,22 +1,26 @@
 BConway\WebsiteBundle\Entity\StatusEntry:
     type: entity
-    table: null
+    table: status_entries
     fields:
         id:
             type: integer
             id: true
             generator:
                 strategy: AUTO
-        jobId:
-            type: integer
         entryTime:
             type: datetime
+            nullable: true
+            column: entry_time
         entryType:
             type: integer
+            nullable: true
+            column: entry_type
         entryNotes:
             type: text
+            column: entry_notes
         createdBy:
             type: integer
+            column: created_by
     manyToOne:
         job:
             targetEntity: \BConway\WebsiteBundle\Entity\Job
