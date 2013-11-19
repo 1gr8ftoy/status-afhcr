@@ -76,12 +76,11 @@ class StatusEntry
     /**
      * Set entryTime
      *
-     * @param \DateTime $entryTime
      * @return StatusEntry
      */
-    public function setEntryTime($entryTime)
+    public function setEntryTime()
     {
-        $this->entryTime = $entryTime;
+        $this->entryTime = new \DateTime();
     
         return $this;
     }
@@ -163,5 +162,33 @@ class StatusEntry
     public function getCreatedBy()
     {
         return $this->createdBy;
+    }
+    /**
+     * @var \BConway\WebsiteBundle\Entity\Job
+     */
+    private $job;
+
+
+    /**
+     * Set job
+     *
+     * @param \BConway\WebsiteBundle\Entity\Job $job
+     * @return StatusEntry
+     */
+    public function setJob(\BConway\WebsiteBundle\Entity\Job $job = null)
+    {
+        $this->job = $job;
+    
+        return $this;
+    }
+
+    /**
+     * Get job
+     *
+     * @return \BConway\WebsiteBundle\Entity\Job 
+     */
+    public function getJob()
+    {
+        return $this->job;
     }
 }

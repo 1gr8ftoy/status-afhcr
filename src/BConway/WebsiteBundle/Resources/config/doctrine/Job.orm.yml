@@ -81,6 +81,10 @@ BConway\WebsiteBundle\Entity\Job:
         jobOriginalLocation:
             type: string
             length: 255
+        jobCreatedAt:
+            type: datetime
+        jobUpdatedAt:
+            type: datetime
     oneToMany:
         status_entries:
             targetEntity: \BConway\WebsiteBundle\Entity\StatusEntry
@@ -94,4 +98,6 @@ BConway\WebsiteBundle\Entity\Job:
             orderBy:
                 noteTime: ASC
             cascade: [all]
-    lifecycleCallbacks: {  }
+    lifecycleCallbacks:
+        prePersist: [ setJobCreatedAt, setJobUpdatedAt ]
+        preUpdate: [ setJobUpdatedAt ]

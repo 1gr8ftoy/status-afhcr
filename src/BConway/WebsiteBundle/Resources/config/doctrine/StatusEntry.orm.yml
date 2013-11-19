@@ -24,4 +24,6 @@ BConway\WebsiteBundle\Entity\StatusEntry:
             joinColumn:
                 name: job_id
                 referencedColumnName: id
-    lifecycleCallbacks: {  }
+    lifecycleCallbacks:
+        prePersist: [ setEntryTime ]
+        preUpdate: [ setEntryTime ]

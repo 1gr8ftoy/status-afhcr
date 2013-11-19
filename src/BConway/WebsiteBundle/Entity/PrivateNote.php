@@ -94,12 +94,11 @@ class PrivateNote
     /**
      * Set noteTime
      *
-     * @param \DateTime $noteTime
      * @return PrivateNote
      */
-    public function setNoteTime($noteTime)
+    public function setNoteTime()
     {
-        $this->noteTime = $noteTime;
+        $this->noteTime = new \DateTime();
     
         return $this;
     }
@@ -135,5 +134,33 @@ class PrivateNote
     public function getCreatedBy()
     {
         return $this->createdBy;
+    }
+    /**
+     * @var \BConway\WebsiteBundle\Entity\Job
+     */
+    private $job;
+
+
+    /**
+     * Set job
+     *
+     * @param \BConway\WebsiteBundle\Entity\Job $job
+     * @return PrivateNote
+     */
+    public function setJob(\BConway\WebsiteBundle\Entity\Job $job = null)
+    {
+        $this->job = $job;
+    
+        return $this;
+    }
+
+    /**
+     * Get job
+     *
+     * @return \BConway\WebsiteBundle\Entity\Job 
+     */
+    public function getJob()
+    {
+        return $this->job;
     }
 }

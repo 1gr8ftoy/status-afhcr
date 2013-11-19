@@ -780,4 +780,142 @@ class Job
     {
         return $this->jobOriginalLocation;
     }
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $status_entries;
+
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $private_notes;
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->status_entries = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->private_notes = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+    
+    /**
+     * Add status_entries
+     *
+     * @param \BConway\WebsiteBundle\Entity\StatusEntry $statusEntries
+     * @return Job
+     */
+    public function addStatusEntrie(\BConway\WebsiteBundle\Entity\StatusEntry $statusEntries)
+    {
+        $this->status_entries[] = $statusEntries;
+    
+        return $this;
+    }
+
+    /**
+     * Remove status_entries
+     *
+     * @param \BConway\WebsiteBundle\Entity\StatusEntry $statusEntries
+     */
+    public function removeStatusEntrie(\BConway\WebsiteBundle\Entity\StatusEntry $statusEntries)
+    {
+        $this->status_entries->removeElement($statusEntries);
+    }
+
+    /**
+     * Get status_entries
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getStatusEntries()
+    {
+        return $this->status_entries;
+    }
+
+    /**
+     * Add private_notes
+     *
+     * @param \BConway\WebsiteBundle\Entity\PrivateNote $privateNotes
+     * @return Job
+     */
+    public function addPrivateNote(\BConway\WebsiteBundle\Entity\PrivateNote $privateNotes)
+    {
+        $this->private_notes[] = $privateNotes;
+    
+        return $this;
+    }
+
+    /**
+     * Remove private_notes
+     *
+     * @param \BConway\WebsiteBundle\Entity\PrivateNote $privateNotes
+     */
+    public function removePrivateNote(\BConway\WebsiteBundle\Entity\PrivateNote $privateNotes)
+    {
+        $this->private_notes->removeElement($privateNotes);
+    }
+
+    /**
+     * Get private_notes
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getPrivateNotes()
+    {
+        return $this->private_notes;
+    }
+    /**
+     * @var \DateTime
+     */
+    private $jobCreatedAt;
+
+    /**
+     * @var \DateTime
+     */
+    private $jobUpdatedAt;
+
+
+    /**
+     * Set jobCreatedAt
+     *
+     * @return Job
+     */
+    public function setJobCreatedAt()
+    {
+        $this->jobCreatedAt = new \DateTime();
+    
+        return $this;
+    }
+
+    /**
+     * Get jobCreatedAt
+     *
+     * @return \DateTime 
+     */
+    public function getJobCreatedAt()
+    {
+        return $this->jobCreatedAt;
+    }
+
+    /**
+     * Set jobUpdatedAt
+     *
+     * @return Job
+     */
+    public function setJobUpdatedAt()
+    {
+        $this->jobUpdatedAt = new \DateTime();
+    
+        return $this;
+    }
+
+    /**
+     * Get jobUpdatedAt
+     *
+     * @return \DateTime 
+     */
+    public function getJobUpdatedAt()
+    {
+        return $this->jobUpdatedAt;
+    }
 }

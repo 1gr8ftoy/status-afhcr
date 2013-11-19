@@ -22,4 +22,6 @@ BConway\WebsiteBundle\Entity\PrivateNote:
             joinColumn:
                 name: job_id
                 referencedColumnName: id
-    lifecycleCallbacks: {  }
+    lifecycleCallbacks:
+        prePersist: [ setNoteTime ]
+        preUpdate: [ setNoteTime ]
