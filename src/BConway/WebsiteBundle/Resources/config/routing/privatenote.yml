@@ -3,7 +3,7 @@ private-note:
     defaults: { _controller: "BConwayWebsiteBundle:PrivateNote:index" }
 
 private-note_show:
-    pattern:  /{id}
+    pattern:  /{id}/show
     defaults: { _controller: "BConwayWebsiteBundle:PrivateNote:show" }
 
 private-note_new:

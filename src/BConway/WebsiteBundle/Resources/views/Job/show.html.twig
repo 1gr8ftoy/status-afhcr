@@ -78,10 +78,6 @@
                 <td>{{ entity.jobQuotedPrice }}</td>
             </tr>
             <tr>
-                <th>Jobprivatenotes</th>
-                <td>{{ entity.jobPrivateNotes }}</td>
-            </tr>
-            <tr>
                 <th>Jobpromisedate</th>
                 <td>{{ entity.jobPromiseDate|date('Y-m-d H:i:s') }}</td>
             </tr>
@@ -130,12 +126,12 @@
 
         <ul class="record_actions">
     <li>
-        <a href="{{ path('') }}">
+        <a href="{{ path('job') }}">
             Back to the list
         </a>
     </li>
     <li>
-        <a href="{{ path('_edit', { 'id': entity.id }) }}">
+        <a href="{{ path('job_edit', { 'id': entity.id }) }}">
             Edit
         </a>
     </li>

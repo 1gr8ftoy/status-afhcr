@@ -3,7 +3,7 @@ status:
     defaults: { _controller: "BConwayWebsiteBundle:StatusEntry:index" }
 
 status_show:
-    pattern:  /{id}
+    pattern:  /{id}/show
     defaults: { _controller: "BConwayWebsiteBundle:StatusEntry:show" }
 
 status_new:

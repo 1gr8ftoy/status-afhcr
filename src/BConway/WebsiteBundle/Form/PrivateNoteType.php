@@ -15,7 +15,6 @@ class PrivateNoteType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('jobId')
             ->add('noteText')
             ->add('noteTime')
             ->add('createdBy')

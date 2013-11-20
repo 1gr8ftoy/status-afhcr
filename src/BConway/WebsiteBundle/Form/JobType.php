@@ -23,8 +23,33 @@ class JobType extends AbstractType
             ->add('customerPhoneNumber1')
             ->add('customerPhoneNumber2')
             ->add('customerEmailAddress')
-            ->add('computerFormFactor')
-            ->add('computerManufacturer')
+            ->add('computerFormFactor', 'choice', array(
+                'choices' => array(
+                    'Desktop',
+                    'Laptop',
+                    'External Hard Drive',
+                    'Internal Hard Drive',
+                    'Other',
+                )
+            ))
+            ->add('computerManufacturer', 'choice', array(
+                'choices' => array(
+                    'Alienware',
+                    'Apple',
+                    'Asus',
+                    'Compaq',
+                    'Custom PC',
+                    'Dell',
+                    'eMachines',
+                    'FIC/CISNet',
+                    'Gateway',
+                    'HP',
+                    'Lenovo',
+                    'Other',
+                    'Sony',
+                    'Toshiba',
+                )
+            ))
             ->add('computerModel')
             ->add('computerSerialNumber')
             ->add('computerProductNumber')
@@ -32,7 +57,6 @@ class JobType extends AbstractType
             ->add('jobNotes')
             ->add('rushOrder')
             ->add('jobQuotedPrice')
-            ->add('jobPrivateNotes')
             ->add('jobPromiseDate')
             ->add('jobCreatedBy')
             ->add('computerSpecDustingNeeded')

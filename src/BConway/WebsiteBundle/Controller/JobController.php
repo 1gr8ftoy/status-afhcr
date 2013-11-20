@@ -44,7 +44,7 @@ class JobController extends Controller
             $em->persist($entity);
             $em->flush();
 
-            return $this->redirect($this->generateUrl('_show', array('id' => $entity->getId())));
+            return $this->redirect($this->generateUrl('job_show', array('id' => $entity->getId())));
         }
 
         return $this->render('BConwayWebsiteBundle:Job:new.html.twig', array(
@@ -63,7 +63,7 @@ class JobController extends Controller
     private function createCreateForm(Job $entity)
     {
         $form = $this->createForm(new JobType(), $entity, array(
-            'action' => $this->generateUrl('_create'),
+            'action' => $this->generateUrl('job_create'),
             'method' => 'POST',
         ));
 
@@ -142,7 +142,7 @@ class JobController extends Controller
     private function createEditForm(Job $entity)
     {
         $form = $this->createForm(new JobType(), $entity, array(
-            'action' => $this->generateUrl('_update', array('id' => $entity->getId())),
+            'action' => $this->generateUrl('job_update', array('id' => $entity->getId())),
             'method' => 'PUT',
         ));
 
@@ -171,7 +171,7 @@ class JobController extends Controller
         if ($editForm->isValid()) {
             $em->flush();
 
-            return $this->redirect($this->generateUrl('_edit', array('id' => $id)));
+            return $this->redirect($this->generateUrl('job_edit', array('id' => $id)));
         }
 
         return $this->render('BConwayWebsiteBundle:Job:edit.html.twig', array(
@@ -201,7 +201,7 @@ class JobController extends Controller
             $em->flush();
         }
 
-        return $this->redirect($this->generateUrl(''));
+        return $this->redirect($this->generateUrl('job'));
     }
 
     /**
@@ -214,7 +214,7 @@ class JobController extends Controller
     private function createDeleteForm($id)
     {
         return $this->createFormBuilder()
-            ->setAction($this->generateUrl('_delete', array('id' => $id)))
+            ->setAction($this->generateUrl('job_delete', array('id' => $id)))
             ->setMethod('DELETE')
             ->add('submit', 'submit', array('label' => 'Delete'))
             ->getForm()

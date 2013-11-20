@@ -7,7 +7,6 @@
         <thead>
             <tr>
                 <th>Id</th>
-                <th>Jobid</th>
                 <th>Entrytime</th>
                 <th>Entrytype</th>
                 <th>Entrynotes</th>
@@ -19,7 +18,6 @@
         {% for entity in entities %}
             <tr>
                 <td><a href="{{ path('status_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
-                <td>{{ entity.jobId }}</td>
                 <td>{% if entity.entryTime %}{{ entity.entryTime|date('Y-m-d H:i:s') }}{% endif %}</td>
                 <td>{{ entity.entryType }}</td>
                 <td>{{ entity.entryNotes }}</td>

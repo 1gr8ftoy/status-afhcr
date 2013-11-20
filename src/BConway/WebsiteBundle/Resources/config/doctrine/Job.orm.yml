@@ -89,7 +89,8 @@ BConway\WebsiteBundle\Entity\Job:
             type: date
             column: job_promise_date
         jobCreatedBy:
-            type: integer
+            type: string
+            length: 255
             column: job_created_by
         computerSpecDustingNeeded:
             type: boolean

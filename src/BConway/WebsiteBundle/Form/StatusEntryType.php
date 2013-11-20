@@ -15,7 +15,6 @@ class StatusEntryType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('jobId')
             ->add('entryTime')
             ->add('entryType')
             ->add('entryNotes')

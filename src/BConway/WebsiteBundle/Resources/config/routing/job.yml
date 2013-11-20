@@ -1,9 +1,9 @@
-job_index:
+job:
     pattern:  /
     defaults: { _controller: "BConwayWebsiteBundle:Job:index" }
 
 job_show:
-    pattern:  /{id}
+    pattern:  /{id}/show
     defaults: { _controller: "BConwayWebsiteBundle:Job:show" }
 
 job_new:

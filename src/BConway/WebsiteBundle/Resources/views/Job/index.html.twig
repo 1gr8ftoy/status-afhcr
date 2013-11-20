@@ -24,7 +24,6 @@
                 <th>Jobnotes</th>
                 <th>Rushorder</th>
                 <th>Jobquotedprice</th>
-                <th>Jobprivatenotes</th>
                 <th>Jobpromisedate</th>
                 <th>Jobcreatedby</th>
                 <th>Computerspecdustingneeded</th>
@@ -42,7 +41,7 @@
         <tbody>
         {% for entity in entities %}
             <tr>
-                <td><a href="{{ path('_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                <td><a href="{{ path('job_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
                 <td>{{ entity.customerFirstName }}</td>
                 <td>{{ entity.customerLastName }}</td>
                 <td>{{ entity.customerCompany }}</td>
@@ -60,7 +59,6 @@
                 <td>{{ entity.jobNotes }}</td>
                 <td>{{ entity.rushOrder }}</td>
                 <td>{{ entity.jobQuotedPrice }}</td>
-                <td>{{ entity.jobPrivateNotes }}</td>
                 <td>{% if entity.jobPromiseDate %}{{ entity.jobPromiseDate|date('Y-m-d H:i:s') }}{% endif %}</td>
                 <td>{{ entity.jobCreatedBy }}</td>
                 <td>{{ entity.computerSpecDustingNeeded }}</td>
@@ -75,10 +73,10 @@
                 <td>
                 <ul>
                     <li>
-                        <a href="{{ path('_show', { 'id': entity.id }) }}">show</a>
+                        <a href="{{ path('job_show', { 'id': entity.id }) }}">show</a>
                     </li>
                     <li>
-                        <a href="{{ path('_edit', { 'id': entity.id }) }}">edit</a>
+                        <a href="{{ path('job_edit', { 'id': entity.id }) }}">edit</a>
                     </li>
                 </ul>
                 </td>
@@ -89,7 +87,7 @@
 
         <ul>
         <li>
-            <a href="{{ path('_new') }}">
+            <a href="{{ path('job_new') }}">
                 Create a new entry
             </a>
         </li>
